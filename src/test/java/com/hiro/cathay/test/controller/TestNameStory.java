@@ -22,7 +22,7 @@ public class TestNameStory extends JUnitStories {
                 .doIgnoreFailureInStories(false)
                 .doVerboseFailures(true);
 
-        configuredEmbedder().useMetaFilters(Collections.singletonList("+name"));
+//        configuredEmbedder().useMetaFilters(Collections.singletonList("+name"));
     }
 
     @Override
@@ -43,8 +43,8 @@ public class TestNameStory extends JUnitStories {
     public List<String> storyPaths() {
         return new StoryFinder().findPaths(
                 CodeLocations.codeLocationFromClass(this.getClass()),
-//                Collections.singletonList("com/hiro/cathay/test/controller/test-name.story"),
-                Collections.singletonList("**/*.story"),
+                Collections.singletonList("com/hiro/cathay/test/controller/test-name.story"),
+//                Collections.singletonList("**/*.story"),
                 null
         );
     }
