@@ -6,3 +6,4 @@ BDD Demo
 - dependencies (Cucumber is used in goat-core):
   - JBehave
   - Concordion
+  - Serenity with JBehave
