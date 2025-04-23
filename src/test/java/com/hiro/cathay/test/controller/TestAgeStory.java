@@ -6,7 +6,7 @@ public class TestAgeStory extends TestStory {
 
     public TestAgeStory() {
         // no other same name story path
-        super("**/test-age.story", new TestAgeRedirector());
+        super("**/test-age.story", new TestAgeSteps());
     }
 
 }

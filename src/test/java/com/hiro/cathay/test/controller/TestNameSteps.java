@@ -1,6 +1,9 @@
 package com.hiro.cathay.test.controller;
 
 import net.thucydides.core.annotations.Step;
+import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 import org.junit.Assert;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -9,11 +12,13 @@ public class TestNameSteps {
     private String input;
     private String response;
 
+    @Given("給一個字 <str>")
     @Step("給一個字 {0}")
     public void givenStr(String str) {
         this.input = str;
     }
 
+    @When("呼叫 API")
     @Step("呼叫 API")
     public void callApi() {
         WebClient client = WebClient.create("http://localhost:8080");
@@ -23,7 +28,8 @@ public class TestNameSteps {
                 .bodyToMono(String.class)
                 .block();
     }
-
+    @Then("取得結果:" +
+            " <expected>")
     @Step("取得結果: {0}")
     public void printResult(String expected) {
         Assert.assertEquals(expected, this.response);
