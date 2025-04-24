@@ -28,8 +28,7 @@ public class TestNameSteps {
                 .bodyToMono(String.class)
                 .block();
     }
-    @Then("取得結果:" +
-            " <expected>")
+    @Then("取得結果: <expected>")
     @Step("取得結果: {0}")
     public void printResult(String expected) {
         Assert.assertEquals(expected, this.response);
