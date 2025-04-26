@@ -1,21 +1,31 @@
 package com.hiro.cathay.test.controller;
 
+import com.hiro.cathay.test.service.TestService;
 import net.thucydides.core.annotations.Step;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.reactive.function.client.WebClient;
 
 public class TestNameSteps {
 
+    private final TestService testService;
+
     private String input;
+
     private String response;
+
+    public TestNameSteps(@Qualifier("testService") TestService testService) {
+        this.testService = testService;
+    }
 
     @Given("給一個字 <str>")
     @Step("給一個字 {0}")
     public void givenStr(String str) {
         this.input = str;
+        testService.howl();
     }
 
     @When("呼叫 API")
