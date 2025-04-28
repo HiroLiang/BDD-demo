@@ -1,9 +1,8 @@
 Scenario: 測試 Plus
-Given 給一個數字 <num1>
-When 給第二個數字 <num2>
-Then 取得結果: <expected>
-
-Examples:
-|num1|num2|expected|
-|11|100|111|
-|1|14|15|
+Given 價碼表 list:
+|name|price|number|
+|banana|17.3|100|
+|orange|12.5|83|
+|apple|8.2|72|
+When 加總
+Then 取得結果: 3357.9
