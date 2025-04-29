@@ -1,5 +1,6 @@
 package com.hiro.cathay.test.controller;
 
+import com.hiro.cathay.test.base.BaseSteps;
 import com.hiro.cathay.test.model.AnimalData;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -7,22 +8,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestSumSteps {
+public class TestSumSteps extends BaseSteps {
 
     List<AnimalData> animals;
     private int total = 0;
 
     @Given("the following animals:")
     public void the_following_animals(DataTable dataTable) {
-        List<Map<String, String>> animals = dataTable.asMaps(String.class, String.class);
-        this.animals = animals.stream()
-                .map(AnimalData::new)
-                .collect(Collectors.toList());
+        this.animals = toList(dataTable.asMaps(String.class, String.class), AnimalData.class);
     }
 
     @When("I sum the animal counts")
