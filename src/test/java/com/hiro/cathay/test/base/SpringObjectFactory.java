@@ -1,3 +1,5 @@
+package com.hiro.cathay.test.base;
+
 import com.hiro.cathay.test.CathayTestApplication;
 import io.cucumber.core.backend.ObjectFactory;
 import org.springframework.boot.SpringApplication;

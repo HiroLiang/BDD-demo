@@ -1,5 +1,6 @@
 package com.hiro.cathay.test.controller;
 
+import com.hiro.cathay.test.base.BaseSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +11,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestNameSteps {
+public class TestNameSteps extends BaseSteps {
 
     @Autowired
     WebTestClient client;
