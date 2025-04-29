@@ -7,6 +7,7 @@ BDD Demo
   - JBehave (mvn test)
   - Concordion (mvn test)
   - Serenity with JBehave (mvn clean verify)
+  - Serenity with Cucumber (mvn clean verify)
 
 ### Introduction
 
